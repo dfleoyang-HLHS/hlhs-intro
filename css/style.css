@@ -35,11 +35,29 @@ section{padding:72px 0}
 .menu a:hover,.menu a.on{background:var(--teal);color:var(--green-d)}
 .menu a.sci{color:var(--sci);font-weight:700}
 .burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:16px;color:var(--ink);cursor:pointer}
-@media (max-width:1400px){
-  .burger{display:block}
+.menu{flex-shrink:0}.menu a{white-space:nowrap}
+.lang{display:flex;gap:2px;margin-left:8px;padding:3px;border:1px solid var(--line);border-radius:999px;flex-shrink:0}
+.lang a{padding:4px 10px;border-radius:999px;font-size:13px;text-decoration:none;color:var(--muted);white-space:nowrap;font-family:system-ui,"Noto Sans TC","Noto Sans JP",sans-serif}
+.lang a:hover{color:var(--ink)}
+.lang a.on{background:var(--green);color:#fff;font-weight:700}
+.nav.compact .burger{display:block;margin-left:0}
+.nav.compact .lang{margin-left:auto}
+.nav.compact .menu{display:none;position:absolute;left:0;right:0;top:60px;background:var(--bg);flex-direction:column;padding:10px 20px 16px;border-bottom:1px solid var(--line)}
+.nav.compact .menu.open{display:flex}
+@media (max-width:900px){
+  .burger{display:block;margin-left:0}
+  .lang{margin-left:auto}
   .menu{display:none;position:absolute;left:0;right:0;top:60px;background:var(--bg);flex-direction:column;padding:10px 20px 16px;border-bottom:1px solid var(--line)}
   .menu.open{display:flex}
 }
+@media (max-width:520px){.brand span{display:none}.lang a{padding:4px 8px}}
+
+/* 語系字體 */
+html[lang=ja] body{font-family:"Noto Sans JP","Noto Sans TC",system-ui,"Yu Gothic","Meiryo",sans-serif}
+html[lang=ja] h1,html[lang=ja] h2,html[lang=ja] h3,html[lang=ja] .brand,html[lang=ja] .stat b,html[lang=ja] .cc-h b,html[lang=ja] .tl .y{font-family:"Noto Serif JP","Noto Serif TC",serif}
+html[lang=en] body{font-family:"Noto Sans","Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.7}
+html[lang=en] h1,html[lang=en] h2,html[lang=en] h3,html[lang=en] .brand,html[lang=en] .stat b,html[lang=en] .cc-h b,html[lang=en] .tl .y{font-family:"Noto Serif","Noto Serif TC",serif}
+html[lang=en] .eyebrow{letter-spacing:.14em}
 
 /* hero */
 .hero{position:relative;color:#fff;padding:72px 0 90px;background:linear-gradient(135deg,#0d5a2b 0%,#1f8a3b 55%,#2a9d8f 100%);overflow:hidden}
@@ -226,3 +244,5 @@ h3 .en-t{display:inline;margin-left:8px;font-size:.6em}
 #abilities b small{white-space:nowrap}
 #abilities span{display:block}
 @media (max-width:520px){#abilities{grid-template-columns:1fr}}
+.hero p.en{color:rgba(255,255,255,.9);font-size:clamp(15px,2.4vw,20px);letter-spacing:.2em;margin:6px 0 18px}
+#abilities b small{display:block;margin:0 0 2px}

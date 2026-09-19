@@ -1,5 +1,8 @@
 /* 網站資料：之後更新升學數據、榮譽榜，只需要改這個檔案 */
 window.SITE = {
+  // 介面符號（各語言版本會覆寫）
+  ui: { open: '（', close: '）', eq: '＝' },
+
   // 近年來國立大學暨醫學系比率（%）
   // 95-96、97-101、102-108、109 年來自 2021 年摺頁；114、115 年為 2026 年新增。
   // 110–113 年為四年平均值（57%）。
@@ -37,7 +40,7 @@ window.SITE = {
   abilities: [
     { name: "學習力", c: "Collaboration", cz: "協作", color: "#8e4585", cdesc: "相互依存地工作，在具備人際與團隊技能的團隊中向他人學習，也為他人貢獻。", desc: "與時俱進的終身學習能力", en: "Lifelong learning ability to keep pace with the times", items: ["協力合作．專注學習", "實事求是．閱讀理解", "自我探索．專業智能"] },
     { name: "思辨力", c: "Critical Thinking", cz: "批判思維", color: "#123f6b", cdesc: "批判性地評估資訊與論點，看見模式與聯繫，建立有意義的知識並應用於現實世界。", desc: "分析判斷的高維思考能力", en: "High-dimensional thinking ability for analysis and judgment", items: ["慎思明辨．媒體識讀", "邏輯推理．批判思維", "獨立思考．正向多元"] },
-    { name: "創造力", c: "Creativity", cz: "創造力", color: "#6a4c93", cdesc: "提出正確的探究問題以產生新想法，建立領導力，並將想法轉化為行動。", desc: "勇於挑戰的創意發想能力", en: "Ability to develop creative and challenging concepts", items: ["創建實相．敏銳觀察", "發現問題．解決問題", "創新觀點．宏觀精神"] },
+    { name: "創造力", c: "Creativity", cz: "創意", color: "#6a4c93", cdesc: "提出正確的探究問題以產生新想法，建立領導力，並將想法轉化為行動。", desc: "勇於挑戰的創意發想能力", en: "Ability to develop creative and challenging concepts", items: ["創建實相．敏銳觀察", "發現問題．解決問題", "創新觀點．宏觀精神"] },
     { name: "溝通力", c: "Communication", cz: "溝通", color: "#1b64b7", cdesc: "為不同的對象，運用各種聲音、模式與工具進行有效溝通。", desc: "人道關懷的互動溝通能力", en: "Interactive communication skills for humanistic care", items: ["同理溝通．多元表達", "全球視野．知彼解此", "雙贏思維．求同存異"] },
     { name: "品格力", c: "Character", cz: "品格", color: "#c2185b", cdesc: "以堅毅、堅韌、毅力與韌性等品格特質進行深度學習，讓學習成為生活不可或缺的一部分。", desc: "融合藝術的品德涵養能力", en: "Ability to integrate art into character cultivation", items: ["待人處事．明辨是非", "關懷社會．自主管理", "挫折修復．自我調節"] },
     { name: "實踐力", c: "Citizenship", cz: "公民素養", color: "#1e9aa8", cdesc: "像全球公民一樣思考，理解多元價值與世界觀，並有興趣與能力解決影響人類與環境永續的真實問題。", desc: "積極果斷的實踐行動能力", en: "Being active and decisive in taking actions", items: ["公民素養．永續發展", "資源整合．組織規劃", "國際參與．志工服務"] }

@@ -1,5 +1,9 @@
 (function () {
   var D = window.SITE;
+  var ROOT = document.documentElement.getAttribute('data-root') || '';
+  var UI = D.ui || { open: '（', close: '）', eq: '＝' };
+  // 六力標籤：括號內優先顯示 6C 的中文名，若與六力同名或與英文相同則改用英文
+  function czLabel(a) { return (a.cz === a.name || a.cz === a.c) ? a.c : a.cz; }
   var $ = function (s, r) { return (r || document).querySelector(s); };
 
   // 沿革
@@ -7,17 +11,21 @@
     return '<li><div class="y">' + h.year + '</div><b>' + h.title + '</b><br><span style="color:var(--muted)">' + h.desc + '</span>' + (h.en ? '<span class="en">' + h.en + '</span>' : '') + '</li>';
   }).join('');
 
-  // 六力（括號加註對應的 NPDL 6C）
+  // 六力（括號加註對應的 NPDL 6C）。若六力名稱本身就是 6C 用語（英文版），就不重複加括號
   $('#abilities').innerHTML = D.abilities.map(function (a) {
-    return '<div><b>' + a.name + '<small>（' + (a.cz === a.name ? a.c : a.cz) + '）</small></b><span>' + a.desc + '</span><span class="en">' + a.en + '</span><ul>' +
+    var lab = czLabel(a);
+    var small = lab === a.name ? '' : '<small>' + UI.open + lab + UI.close + '</small>';
+    return '<div><b>' + a.name + small + '</b><span>' + a.desc + '</span>' + (a.en ? '<span class="en">' + a.en + '</span>' : '') + '<ul>' +
       a.items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul></div>';
   }).join('');
 
   // 六力 × 6Cs 對照
   $('#comp-grid').innerHTML = D.abilities.map(function (a) {
+    var right = a.name === a.c ? '' :
+      '<i>' + UI.eq + '</i><span>' + ((a.cz === a.name || a.cz === a.c) ? a.c : a.cz + '<em>' + a.c + '</em>') + '</span>';
     return '<article class="cc" style="--cc:' + a.color + '">' +
-      '<div class="cc-h"><b>' + a.name + '</b><i>＝</i><span>' + (a.cz === a.name ? a.c : a.cz + '<em>' + a.c + '</em>') + '</span></div>' +
-      '<p>' + a.cdesc + '</p><p class="en" style="margin-top:-6px">' + a.en + '</p>' +
+      '<div class="cc-h"><b>' + a.name + '</b>' + right + '</div>' +
+      '<p>' + a.cdesc + '</p>' + (a.en ? '<p class="en" style="margin-top:-6px">' + a.en + '</p>' : '') +
       '<ul>' + a.items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul></article>';
   }).join('');
 
@@ -48,8 +56,8 @@
   // 相簿
   function gallery(sel, items) {
     $(sel).innerHTML = items.map(function (g) {
-      return '<button type="button" data-src="images/' + g.img + '.webp" data-cap="' + g.cap + '">' +
-        '<img src="images/' + g.img + '.webp" alt="' + g.cap + '" loading="lazy"><span>' + g.cap + '</span></button>';
+      return '<button type="button" data-src="' + ROOT + 'images/' + g.img + '.webp" data-cap="' + g.cap + '">' +
+        '<img src="' + ROOT + 'images/' + g.img + '.webp" alt="' + g.cap + '" loading="lazy"><span>' + g.cap + '</span></button>';
     }).join('');
   }
   gallery('#g-act', D.gallery.activities);
@@ -78,6 +86,21 @@
         });
       });
     });
+  });
+
+  // 選單自動收合：不論語言，只要選單放不下就改成漢堡選單
+  var nav = $('.nav'), navWrap = $('.nav .wrap');
+  function fitNav() {
+    nav.classList.remove('compact');
+    if (navWrap.scrollWidth > navWrap.clientWidth + 1) nav.classList.add('compact');
+  }
+  fitNav();
+  window.addEventListener('resize', fitNav);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitNav);
+
+  // 語言切換時保留目前所在的章節
+  document.querySelectorAll('.lang a').forEach(function (a) {
+    a.addEventListener('click', function () { if (location.hash) a.href = a.getAttribute('href') + location.hash; });
   });
 
   // 選單

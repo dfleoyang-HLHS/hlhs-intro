@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-root="">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -15,16 +15,15 @@
 
 <nav class="nav" aria-label="主選單">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="images/emblem.png" alt="">國立花蓮高中</a>
-    <button class="burger" aria-expanded="false" aria-controls="menu">選單</button>
+    <a class="brand" href="#top"><img src="images/emblem.png" alt=""><span>國立花蓮高中</span></a>
     <ul class="menu" id="menu">
       <li><a href="#about">認識花中</a></li>
       <li><a href="#vision">三大願景</a></li>
       <li><a href="#competencies">六力與6Cs</a></li>
       <li><a href="#deep">深度學習</a></li>
-      <li><a class="sci" href="#science">科學活動</a></li>
-      <li><a href="#arts">文藝活動</a></li>
-      <li><a href="#global">國際交流</a></li>
+      <li><a class="sci" href="#science">科學思維</a></li>
+      <li><a href="#arts">人文關懷</a></li>
+      <li><a href="#global">國際視野</a></li>
       <li><a href="#classes">班別</a></li>
       <li><a href="#hualien">花蓮學</a></li>
       <li><a href="#portfolio">學習歷程</a></li>
@@ -33,19 +32,21 @@
       <li><a href="#results">升學與榮譽</a></li>
       <li><a href="#contact">聯絡</a></li>
     </ul>
+    <div class="lang" role="group" aria-label="語言 Language 言語"><a href="./" class="on" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">中文</a><a href="en/" lang="en" hreflang="en">English</a><a href="ja/" lang="ja" hreflang="ja">日本語</a></div>
+    <button class="burger" aria-expanded="false" aria-controls="menu">選單</button>
   </div>
 </nav>
 
 <header class="hero" id="top">
   <div class="wrap">
-    <p class="eyebrow" style="color:var(--yellow)">SINCE 1936　·　花蓮市民權路</p>
+    <p class="eyebrow" style="color:var(--yellow)">SINCE 1936(民國25年)．為國育才</p>
     <h1>國立花蓮高級中學</h1>
     <p class="en">National Hua-Lien High School</p>
     <p class="motto">以天下為己任．惟詩書敦其仁</p>
     <div class="btns">
-      <a class="btn p" href="#science">科學活動</a>
-      <a class="btn p" href="#arts">文藝活動</a>
-      <a class="btn p" href="#global">國際交流</a>
+      <a class="btn p" href="#science">科學思維</a>
+      <a class="btn p" href="#arts">人文關懷</a>
+      <a class="btn p" href="#global">國際視野</a>
       <a class="btn g" href="#about">認識花中</a>
     </div>
     <div class="pano"><img src="images/panorama.webp" alt="花中學生在白燈塔前合影" width="1075" height="287"></div>
@@ -95,7 +96,7 @@
           <h3>人文關懷</h3>
           <p>培養具有人文關懷及服務態度的花中人。</p><p class="en">Cultivate a humanistic mind to care and a willingness to serve in our students.</p>
           <p><span class="tag">亮點</span>花中文學獎、作家詩人駐校指導、校友作家大師講座</p>
-          <p><a class="more" href="#arts">前往文藝活動專區 →</a></p>
+          <p><a class="more" href="#arts">前往人文關懷專區 →</a></p>
         </div>
       </article>
       <article class="card reveal">
@@ -115,7 +116,7 @@
           <h3>國際視野</h3>
           <p>打造深具國家認同及國際視野的花中人。</p><p class="en">Deepen HLHS students' national identity and expand their global perspective.</p>
           <p><span class="tag">亮點</span>日本教育旅行（每年一次）、姊妹校日本八重山高校、雙語教學</p>
-          <p><a class="more" href="#global">前往國際交流專區 →</a></p>
+          <p><a class="more" href="#global">前往國際視野專區 →</a></p>
         </div>
       </article>
     </div>
@@ -212,7 +213,7 @@
     <p class="eyebrow">SCIENCE AT HLHS</p>
     <h2>科學思維專區 <span class="en-t">Scientific Thinking</span></h2>
     <p class="lead">從競賽、課程、社團到營隊，花中的學生在這裡把好奇心變成研究與實作。</p>
-    <p class="lead" style="margin-top:-14px">文學、音樂與國際交流，請見後方的<a href="#arts">文藝活動</a>與<a href="#global">國際交流</a>專區。</p>
+    <p class="lead" style="margin-top:-14px">更多內容，請見後方的<a href="#arts">人文關懷</a>與<a href="#global">國際視野</a>專區。</p>
 
     <div class="sc-hero reveal">
       <div>
@@ -306,14 +307,14 @@
   </div>
 </section>
 
-<!-- 文藝活動 -->
+<!-- 人文關懷 -->
 <section id="arts" class="topic arts">
   <div class="wrap">
-    <p class="eyebrow">LITERATURE &amp; ARTS</p>
-    <h2>文藝活動 <span class="en-t">Humanistic Care · Literature &amp; Arts</span></h2>
+    <p class="eyebrow">HUMANISTIC CARE</p>
+    <h2>人文關懷 <span class="en-t">Humanistic Care</span></h2>
     <p class="lead">文學、音樂與人文閱讀，是花中人文關懷的日常。</p>
 
-    <div class="tabs" role="tablist" aria-label="文藝活動分類">
+    <div class="tabs" role="tablist" aria-label="人文關懷分類">
       <button role="tab" aria-selected="true" data-tab="a1">文學與人文</button>
       <button role="tab" aria-selected="false" data-tab="a2">音樂與藝術</button>
       <button role="tab" aria-selected="false" data-tab="a3">選修與社團</button>
@@ -380,14 +381,14 @@
   </div>
 </section>
 
-<!-- 國際交流 -->
+<!-- 國際視野 -->
 <section id="global" class="topic global">
   <div class="wrap">
-    <p class="eyebrow">GLOBAL EXCHANGE</p>
-    <h2>國際交流 <span class="en-t">Global Perspective</span></h2>
+    <p class="eyebrow">GLOBAL PERSPECTIVE</p>
+    <h2>國際視野 <span class="en-t">Global Perspective</span></h2>
     <p class="lead">從姊妹校、教育旅行到外師入班，讓學生在校園裡就能接軌世界。</p>
 
-    <div class="tabs" role="tablist" aria-label="國際交流分類">
+    <div class="tabs" role="tablist" aria-label="國際視野分類">
       <button role="tab" aria-selected="true" data-tab="g1">交流亮點</button>
       <button role="tab" aria-selected="false" data-tab="g2">語言與課程</button>
       <button role="tab" aria-selected="false" data-tab="g3">計畫與社團</button>
@@ -684,8 +685,8 @@
         <p>National Hua-Lien High School<br>以天下為己任．惟詩書敦其仁</p>
       </div>
       <div>
-        <h3>花現位置 <span style="font-weight:400;font-size:.7em">Our location</span></h3>
-        <p>970 花蓮縣花蓮市民權路 42 號<br><span style="font-size:13px;opacity:.8">No. 42 Minquan Road, Hualien City, Hualien County (Postcode 970)</span></p>
+        <h3>花現位置 <span class="en">Our location</span></h3>
+        <p>970 花蓮縣花蓮市民權路 42 號<br><span class="en">No. 42 Minquan Road, Hualien City, Hualien County (Postcode 970)</span></p>
         <h3 style="margin-top:14px">花中有話</h3>
         <p><a href="tel:038242236">03-8242236</a></p>
       </div>
